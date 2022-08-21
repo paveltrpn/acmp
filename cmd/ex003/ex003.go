@@ -1,3 +1,4 @@
+// ex003
 // Vasya and Petya go in school in same grade. Yesterday Petya told
 // to Vasya about cunning (tricky) way to give a square of number ended by
 // five. Now Vasye can easlly obtain square of two-digit (or even three-digit)
@@ -33,16 +34,15 @@ func main() {
 	inf, err := os.Open(INFILE)
 
 	if err != nil {
-		fmt.Errorf(err.Error())
+		fmt.Println(err.Error())
+		os.Exit(0)
 	}
 	defer inf.Close()
 
 	rd := bufio.NewScanner(inf)
 
 	rd.Scan()
-	number := rd.Text()
-
-	A, _ := strconv.Atoi(number)
+	A, _ := strconv.Atoi(rd.Text())
 
 	outf, err := os.Create(OUTFILE)
 	defer outf.Close()
