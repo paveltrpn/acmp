@@ -12,16 +12,6 @@ const (
 	OUTFILE string = "OUTPUT.TXT"
 )
 
-// Split three digit number int three individual
-// numbers
-func splitDecNumber(num int) (int, int, int) {
-	cnt := num / 100
-	dec := (num - cnt*100) / 10
-	eds := (num - cnt*100 - dec*10)
-
-	return cnt, dec, eds
-}
-
 func main() {
 	inf, err := os.Open(INFILE)
 
